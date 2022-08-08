@@ -1,0 +1,74 @@
+
+#include <assert.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "list.h"
+
+// Worst case time complexity of this solution: O(...)
+List zipList(List l1, int x, List l2, int y) {
+    List zipped = ListNew();
+    
+    Node currL1 = l1->first;
+    Node currL2 = l2->first;
+    
+    int run = 1;
+    // If l1 and l2 are 0,
+    if (currL1 == NULL && currL2 == NULL) {
+        return zipped;
+    } else {
+        // set up first in zipped
+        if (currL1 != NULL) {
+            int v = currL1->value;
+            zipped->first = newNode(v);
+            currL1 = currL1->next;
+            run = 0;
+        } else {
+            int v = currL2->value;
+            zipped->first = newNode(v);
+            currL2 = currL2->next;
+            run = 0;
+        }
+        Node currZ = zipped->first;
+        // while both lists are not fully copied
+        while (currL1 != NULL || currL2 != NULL) {
+        
+            // for i<x, copy 1 value of l1 into zipped
+            for (int i = 0; i < x; i++) {
+                // if there are more values in list, create new node and add
+                if (currL1 != NULL && run == 1)  {
+                    int v = currL1->value;
+                    Node new = newNode(v);
+                    currZ->next = new;
+                    currZ = currZ->next;
+                    currL1 = currL1->next;
+                    zipped->last = currZ;
+                } 
+                run = 1;
+            }
+        
+            // for i<y, copy i value of l2 into zipped    
+            for (int i = 0; i < y; i++) {
+                // if there are more values in list, create new node and add
+                if (currL2 != NULL && run == 1)  {
+                    int v = currL2->value;
+                    Node new = newNode(v);
+                    currZ->next = new;
+                    currZ = currZ->next;
+                    currL2 = currL2->next;
+                    zipped->last = currZ;
+                 } 
+                 run = 1;
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    return zipped;
+}
+

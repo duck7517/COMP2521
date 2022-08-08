@@ -1,0 +1,9 @@
+Question 2
+
+Explain why the compilation error occurred and briefly describe how it
+can be fixed.
+
+The compilation error occured because the graph ADT was incorrectly defined.
+In line 15, edges is referenced but it may not be properly defined as a 2D 
+array in the struct.
+

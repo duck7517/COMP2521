@@ -1,0 +1,7 @@
+Question 8
+
+Which of the given statements about tries (A, B, C or D) is false?
+Briefly explain why the statement you selected is false.
+
+B. A trie is a prefix data structure so it is possible for another word to be a prefix of another word. For example, app would be a prefix of apple. The other options are also all correct.
+

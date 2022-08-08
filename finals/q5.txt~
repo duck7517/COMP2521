@@ -1,0 +1,13 @@
+Question 5
+
+(a) Describe and justify the steps you would take to determine which
+    sorting algorithm the program uses.
+
+The best, average and worst case time complexities for selection sort are the same while the average and best is different to the worst for quicksort. To find the algorithm used by the program, give inputs of a sorted list, a randomised list and a reverse sorted list to check if the time taken for the program to run is the same. If it is, it is selection sort.
+
+
+(b) Is the sorting algorithm that the program uses stable? How confident
+    are you in your conclusion? Explain your answer.
+
+It is stable because, compared to the input, the second value stay in the same order if the first value is the same. We can be pretty confident that it is stable because it is tested for the values 2, 4 and 5 and stays true for all of them. It is sorted by the first value without changing order od second.
+

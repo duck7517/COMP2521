@@ -1,0 +1,64 @@
+// Centrality Measures API implementation
+// COMP2521 Assignment 2
+
+#include <assert.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "CentralityMeasures.h"
+#include "Dijkstra.h"
+#include "Graph.h"
+
+double *closenessCentrality(Graph g) {
+    int nodes = GraphNumVertices(g);
+    // Create new array to store values
+    double *closeness = malloc(nodes * sizeof(double));
+    
+    // initialise array to 0
+    for (int i = 0; i < nodes; i++) {
+        closeness[i] = 0;
+    }
+    
+    printf("%d\n", nodes);
+    // Loop through for each node in closeness array
+    int i = 0;
+    while (i < nodes) {
+        NodeData *array = dijkstra(g, i);
+
+        // Loop through each distance in array
+        double totalDist = 0;
+        double reachable = 0;
+        int j = 0;
+        while (j < nodes) {
+            // Find total distance and reachable nodes
+            if (array[j].dist != INFINITY) {
+                totalDist += array[j].dist;
+                reachable++;
+            }
+            j++;
+        }
+        
+        printf("%lf\n", totalDist);
+        
+        if (reachable == 0) { // isolated case
+            closeness[i] = 0.0;
+        } else {
+            // non-isolated case
+            // calculate closeness centrality
+            double a = reachable - 1.0;
+            double b = nodes - 1.0;
+                printf("%lf\n", a);
+            closeness[i] = (a/b)*(a/totalDist);
+        }
+        i++;
+        freeNodeData(array, nodes);
+    }
+
+	return closeness;
+}
+
+double *betweennessCentrality(Graph g) {
+	return NULL;
+}
+

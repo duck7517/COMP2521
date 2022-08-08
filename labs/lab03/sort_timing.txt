@@ -1,0 +1,25 @@
+Input	Initial	Number	AvgTime		    AvgTime
+Size	Order	of Runs	for sortIntList	for sort
+10000	random	5	    0.15		    0
+10000	sorted	5	    0.12		    0
+10000	reverse	5	    0		        0   
+20000	random	5	    0.66		    0
+20000	sorted	5	    0.5		        0
+20000	reverse	5	    0		        0
+50000	random	5	    6.59		    0.02
+50000	sorted	5   	3.15		    0.006
+50000	reverse	5	    0.01		    0.01
+...
+
+As the input size increases, the time taken increased as expected. However there
+were significant differences in the time taken for random, sorted and reverse
+initial order for each input size. Notably, the reversed inital order takes 
+the least amount of time. This can be attributed to the structure of
+IntListInsertInOrder function which is used to sort. The function is written to
+check for the position of the new item to be inserted. In the reverse order,
+the new item is always the smallest one so far. Thus, in the function, the loop
+only runs once to find the position of the newest item. It is seen that the
+time difference increases as the input size increases. The reversed order will 
+only ever run the loop once to find the postion. The sorted will alway have to 
+go through the whole queue, and the random is unpredictable.
+

@@ -1,0 +1,7 @@
+Question 4
+
+Which of the given algorithms could have been used to construct the
+mininum spanning tree? Justify your answer.
+
+Kruksal's algorithm was used for this minimum spanning tree. Only Prim's and Kruksal's are used for minimum spanning tree. Prim's takes adjacent edges only while Kruksal's 
+

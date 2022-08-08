@@ -1,0 +1,18 @@
+Question 7
+
+(a) How many items are examined in searching for the key 42? Justify
+    your answer.
+
+4
+
+
+(b) How many items are examined in searching for the key 111? Justify
+    your answer.
+
+10
+
+(c) What is the worst-case search cost after N total items have been
+    inserted? Justify your answer.
+
+Worst case is N/11 + 1. There will be a added to each slot for each cycle of 11, and additionally there will be and extra one for the 0-11 range which is unaccounted for in the N/11 calculation.
+

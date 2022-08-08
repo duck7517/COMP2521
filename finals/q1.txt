@@ -1,0 +1,23 @@
+Question 1
+
+(a) What is the maximum input size that can be processed? Justify your
+    answer.
+    
+    19. 2^10 = 1024 processes. A computer 1000 times faster can process 1024000 
+    which is between 2^19 and 2^20. So maximum is 19.
+
+
+
+(b) Which of the two algorithms is more efficient? Justify your answer.
+    Binary search uses less comparisons which decreases the time complexity.
+    Quad search decreases the soze of the search space twice as fast but with three times the number of comparisons.
+
+
+(c) What are the time complexities of fnA() and fnB() in terms of a and
+    b? Justify your answer.
+    
+    fnA recurses b-a number of times. the time complexity would be O(n).
+    fnB is (b-a)^2. Calls itself the number of times it takes for a to equal b but also calls fnA each time.
+
+
+
